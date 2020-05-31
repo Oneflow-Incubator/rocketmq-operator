@@ -18,9 +18,10 @@
 set -eux;
 
 # You can change the DOCKERHUB_REPO to your docker repo for development purpose
-DOCKERHUB_REPO="apacherocketmq/rocketmq-operator:0.2.0"
+# DOCKERHUB_REPO="apacherocketmq/rocketmq-operator:0.2.0"
+DOCKERHUB_REPO="hub.oneflow.dev/oneflow-incubator/rocketmq-operator:0.2.0"
 # The version of RocketMQ including the Admin Tool
-ROCKETMQ_VERSION="4.5.0"
+ROCKETMQ_VERSION="4.7.0"
 
 export GO111MODULE=on
 

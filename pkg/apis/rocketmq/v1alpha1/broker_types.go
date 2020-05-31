@@ -52,6 +52,10 @@ type BrokerSpec struct {
 	VolumeClaimTemplates []corev1.PersistentVolumeClaim `json:"volumeClaimTemplates"`
 	// The name of pod where the metadata from
 	ScalePodName string `json:"scalePodName"`
+	// HostNetwork Spec
+	HostNetwork bool `json:"hostNetwork"`
+	// DNSPolicy Spec
+	DNSPolicy corev1.DNSPolicy `json:"dnsPolicy"`
 }
 
 // BrokerStatus defines the observed state of Broker

@@ -391,6 +391,8 @@ func (r *ReconcileBroker) getBrokerStatefulSet(broker *rocketmqv1alpha1.Broker, 
 					Labels: ls,
 				},
 				Spec: corev1.PodSpec{
+					HostNetwork: broker.Spec.HostNetwork,
+					DNSPolicy: broker.Spec.DNSPolicy,
 					Containers: []corev1.Container{{
 						Image: broker.Spec.BrokerImage,
 						Name:  cons.BrokerContainerName,

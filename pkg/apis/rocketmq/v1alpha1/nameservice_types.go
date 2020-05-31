@@ -43,6 +43,10 @@ type NameServiceSpec struct {
 	HostPath string `json:"hostPath"`
 	// VolumeClaimTemplates defines the StorageClass
 	VolumeClaimTemplates []corev1.PersistentVolumeClaim `json:"volumeClaimTemplates"`
+	// HostNetwork Spec
+	HostNetwork bool `json:"hostNetwork"`
+	// DNSPolicy Spec
+	DNSPolicy corev1.DNSPolicy `json:"dnsPolicy"`
 }
 
 // NameServiceStatus defines the observed state of NameService
