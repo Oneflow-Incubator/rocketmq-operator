@@ -21,19 +21,19 @@ set -eux;
 # DOCKERHUB_REPO="apacherocketmq/rocketmq-operator:0.2.0"
 DOCKERHUB_REPO="hub.oneflow.dev/oneflow-incubator/rocketmq-operator:0.2.0"
 # The version of RocketMQ including the Admin Tool
-ROCKETMQ_VERSION="4.7.0"
+ROCKETMQ_VERSION="4.5.0"
 
 export GO111MODULE=on
 
 # Download rocketmq.zip for the Admin Tool if it does not exist
 if [ ! -e build/rocketmq.zip ]; then
-  curl https://dist.apache.org/repos/dist/release/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip
+  curl https://archive.apache.org/dist/rocketmq/${ROCKETMQ_VERSION}/rocketmq-all-${ROCKETMQ_VERSION}-bin-release.zip -o rocketmq.zip
   mv rocketmq.zip build
 fi
 
 # use the following 2 commands if you have updated the [kind]_type.go file or don't have zz_generated.deepcopy.go and zz_generated.openapi.go files
 operator-sdk generate k8s
-operator-sdk generate openapi
+operator-sdk generate crds
 
 go mod vendor
 

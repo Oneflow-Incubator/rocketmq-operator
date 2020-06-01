@@ -41,7 +41,9 @@ COPY build/rocketmq.zip ${ROCKETMQ_HOME}/rocketmq.zip
 
 # Install
 RUN set -eux; \
-    apk add --virtual .build-deps unzip; \
+    apk add --virtual .build-deps unzip;
+
+RUN set -eux; \
     unzip rocketmq.zip; \
 	mv rocketmq-all*/* . ; \
 	rmdir rocketmq-all* ; \

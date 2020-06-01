@@ -20,7 +20,7 @@ metadata:
   name: broker
 spec:
   # size is the number of the broker cluster, each broker cluster contains a master broker and [replicaPerGroup] replica brokers.
-  size: 2
+  size: 1
   # nameServers is the [ip:port] list of name service
   nameServers: 192.168.130.33:9876
   # replicationMode is the broker replica sync mode, can be ASYNC or SYNC

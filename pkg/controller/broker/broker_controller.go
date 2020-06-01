@@ -465,6 +465,11 @@ func getVolumeClaimTemplates(broker *rocketmqv1alpha1.Broker) []corev1.Persisten
 }
 
 func getVolumes(broker *rocketmqv1alpha1.Broker) []corev1.Volume {
+	log.Info("----------broker---------")
+	log.Info(broker.Spec.VolumeClaimTemplates[0].Name)
+	log.Info(broker.Spec.VolumeClaimTemplates[0].Spec.VolumeName)
+	log.Info(broker.Spec.VolumeClaimTemplates[0].ObjectMeta.Name)
+	log.Info("----------broker---------")
 	switch broker.Spec.StorageMode {
 	case cons.StorageModeNFS:
 		return nil

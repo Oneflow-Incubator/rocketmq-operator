@@ -16,13 +16,12 @@
 # limitations under the License.
 
 echo "Stopping RocketMQ-Operator..."
-#kubectl delete -f example/rocketmq_v1alpha1_broker_cr.yaml
-#kubectl delete -f example/rocketmq_v1alpha1_nameservice_cr.yaml
+kubectl -n rocketmq-operator delete -f example/rocketmq_v1alpha1_broker_cr.yaml
+kubectl -n rocketmq-operator delete -f example/rocketmq_v1alpha1_nameservice_cr.yaml
+kubectl -n rocketmq-operator delete -f example/rocketmq_v1alpha1_topictransfer_cr.yaml
 
 kubectl -n rocketmq-operator delete -f deploy/operator.yaml
 kubectl -n rocketmq-operator delete -f deploy/role_binding.yaml
 kubectl -n rocketmq-operator delete -f deploy/role.yaml
 kubectl -n rocketmq-operator delete -f deploy/service_account.yaml
-kubectl -n rocketmq-operator delete -f deploy/crds/rocketmq_v1alpha1_broker_crd.yaml
-kubectl -n rocketmq-operator delete -f deploy/crds/rocketmq_v1alpha1_nameservice_crd.yaml
-kubectl -n rocketmq-operator delete -f deploy/crds/rocketmq_v1alpha1_topictransfer_crd.yaml
+kubectl -n rocketmq-operator delete -f deploy/crds/
